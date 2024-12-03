@@ -1,23 +1,23 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",                                // Spécifie la version ECMAScript à utiliser (ESNext pour la plus récente)
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],          // Spécifie les bibliothèques (DOM, DOM.Iterable et ESNext) disponibles
-    "allowJs": true,                                   // Permet l'importation et la compilation de fichiers JavaScript
-    "skipLibCheck": true,                              // Ignore la vérification des types dans les fichiers de définition de bibliothèques
-    "esModuleInterop": true,                           // Facilite l'importation des modules CommonJS mais on s'en moque auj car on n'utilise plus CommonJS mais ESNext avec "import" et "export" pour gérer les imports et les export de modules.
-    "allowSyntheticDefaultImports": true,              // Permet d'importer des modules CommonJS avec la syntaxe import ES6 moderne
-    "strict": true,                                    // Active le mode strict, ce qui active toutes les vérifications strictes de TypeScript
-    "forceConsistentCasingInFileNames": true,          // Enforce la cohérence de la casse dans les noms de fichiers d'import/export
-    "module": "ESNext",                                // Utilise le système de modules ESNext (le plus récent) vs CommonJS avant à l'éééééépoque avant ECMAScript 5 et +.
-    "moduleResolution": "Node",                        // Utilise la résolution de modules à la manière de Node.js
-    "isolatedModules": true,                           // Compile chaque fichier comme un module individuel, nécessaire pour le mode JSX
-    "resolveJsonModule": true,                         // Permet l'importation de fichiers JSON dans TypeScript
-    "jsx": "react-jsx",                                // Utilise le support JSX avec React (React 17+ n'a plus besoin d'import explicite de React)
-    "noEmit": true,                                    // Empêche la sortie des fichiers de compilation (utile pour des outils comme Babel)
-    "incremental": true                                // Active les builds incrémentaux pour accélérer les recompilations
-  },
-  "include": ["src/**/*"],                             // Inclut tous les fichiers dans le dossier "src" pour la compilation
-  "exclude": ["node_modules", "build", "dist"]         // Exclut les dossiers node_modules, build et dist de la compilation
+    "compilerOptions": {
+        "target": "ESNext", // Spécifie la version ECMAScript à utiliser (ESNext pour la plus récente)
+        "lib": ["DOM", "DOM.Iterable", "ESNext"], // Spécifie les bibliothèques (DOM, DOM.Iterable et ESNext) disponibles
+        "allowJs": true, // Permet l'importation et la compilation de fichiers JavaScript
+        "skipLibCheck": true, // Ignore la vérification des types dans les fichiers de définition de bibliothèques
+        "esModuleInterop": true, // Facilite l'importation des modules CommonJS mais on s'en moque auj car on n'utilise plus CommonJS mais ESNext avec "import" et "export" pour gérer les imports et les export de modules.
+        "allowSyntheticDefaultImports": true, // Permet d'importer des modules CommonJS avec la syntaxe import ES6 moderne
+        "strict": true, // Active le mode strict, ce qui active toutes les vérifications strictes de TypeScript
+        "forceConsistentCasingInFileNames": true, // Enforce la cohérence de la casse dans les noms de fichiers d'import/export
+        "module": "ESNext", // Utilise le système de modules ESNext (le plus récent) vs CommonJS avant à l'éééééépoque avant ECMAScript 5 et +.
+        "moduleResolution": "Node", // Utilise la résolution de modules à la manière de Node.js
+        "isolatedModules": true, // Compile chaque fichier comme un module individuel, nécessaire pour le mode JSX
+        "resolveJsonModule": true, // Permet l'importation de fichiers JSON dans TypeScript
+        "jsx": "react-jsx", // Utilise le support JSX avec React (React 17+ n'a plus besoin d'import explicite de React)
+        "noEmit": true, // Empêche la sortie des fichiers de compilation (utile pour des outils comme Babel)
+        "incremental": true // Active les builds incrémentaux pour accélérer les recompilations
+    },
+    "include": ["src/**/*"], // Inclut tous les fichiers dans le dossier "src" pour la compilation
+    "exclude": ["node_modules", "build", "dist"] // Exclut les dossiers node_modules, build et dist de la compilation
 }
 
 // {

@@ -1,16 +1,54 @@
 import styled, { css } from "styled-components"
 import { theme } from "../../theme"
+import { ReactNode } from "react"
 
-export default function Button({ label, Icon, className, version = "normal", onClick, disabled }) {
+type ButtonVersion = "normal" | "success"
+
+export const ButtonLabelMap = {
+  ACCESS: "Accéder à mon espace",
+  ADD_PRODUCT: "Ajouter un nouveau produit au menu",
+  GENERATE: "Générer de nouveaux produits",
+  ADD: "Ajouter",
+} as const;
+
+export type ButtonLabel = (typeof ButtonLabelMap)[keyof typeof ButtonLabelMap];
+
+type ButtonProps = {
+  label: ButtonLabel;
+  Icon?: ReactNode;
+  className?: string;
+  version?: ButtonVersion;
+  onClick?: () => void;
+  disabled?: boolean;
+};
+
+export default function Button({
+  label,
+  Icon,
+  className,
+  version = "normal",
+  onClick,
+  disabled
+}: ButtonProps) {
   return (
-    <ButtonStyled className={className} version={version} onClick={onClick} disabled={disabled}>
+    <ButtonStyled
+      className={className}
+      version={version}
+      onClick={onClick}
+      disabled={disabled}
+    >
       <span>{label}</span>
       <div className="icon">{Icon && Icon}</div>
     </ButtonStyled>
   )
 }
 
-const ButtonStyled = styled.button`
+type ButtonStyledProps = {
+  version: ButtonVersion
+  disabled?: boolean
+}
+
+const ButtonStyled = styled.button<ButtonStyledProps>`
   ${({ version }) => extraStyle[version]};
 `
 
@@ -95,5 +133,5 @@ const extraStyleSuccess = css`
 `
 const extraStyle = {
   normal: extraStyleNormal,
-  success: extraStyleSuccess,
+  success: extraStyleSuccess
 }

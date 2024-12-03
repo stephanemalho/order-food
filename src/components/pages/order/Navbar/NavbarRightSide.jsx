@@ -20,7 +20,7 @@ export default function NavbarRightSide() {
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
-        progress: undefined,
+        progress: undefined
       })
     }
     setIsModeAdmin(!isModeAdmin)
