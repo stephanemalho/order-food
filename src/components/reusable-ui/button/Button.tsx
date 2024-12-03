@@ -1,26 +1,20 @@
-import styled, { css } from "styled-components"
-import { theme } from "../../theme"
 import { ReactNode } from "react"
-
-type ButtonVersion = "normal" | "success"
-
-export const ButtonLabelMap = {
-  ACCESS: "Accéder à mon espace",
-  ADD_PRODUCT: "Ajouter un nouveau produit au menu",
-  GENERATE: "Générer de nouveaux produits",
-  ADD: "Ajouter",
-} as const;
-
-export type ButtonLabel = (typeof ButtonLabelMap)[keyof typeof ButtonLabelMap];
+import styled, { css } from "styled-components"
+import { theme } from "../../../theme"
+import {
+  ButtonLabelEnum,
+  ButtonStyledProps,
+  ButtonVersion
+} from "./button.type"
 
 type ButtonProps = {
-  label: ButtonLabel;
-  Icon?: ReactNode;
-  className?: string;
-  version?: ButtonVersion;
-  onClick?: () => void;
-  disabled?: boolean;
-};
+  label: ButtonLabelEnum
+  Icon?: ReactNode
+  className?: string | undefined
+  version?: ButtonVersion | undefined
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
+  disabled?: boolean | undefined
+}
 
 export default function Button({
   label,
@@ -41,11 +35,6 @@ export default function Button({
       <div className="icon">{Icon && Icon}</div>
     </ButtonStyled>
   )
-}
-
-type ButtonStyledProps = {
-  version: ButtonVersion
-  disabled?: boolean
 }
 
 const ButtonStyled = styled.button<ButtonStyledProps>`

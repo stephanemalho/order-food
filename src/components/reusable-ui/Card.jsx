@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components"
 import { theme } from "../../theme"
-import Button from "./Button"
+import Button from "./button/Button"
 import { TiDelete } from "react-icons/ti"
 import { fadeInFromRight, fadeInFromTop } from "../../theme/animations"
 
@@ -202,7 +202,8 @@ const CardStyled = styled.div`
       }
     }
 
-    ${({ isHoverable, isSelected }) => isHoverable && isSelected && selectedStyle}
+    ${({ isHoverable, isSelected }) =>
+      isHoverable && isSelected && selectedStyle}
   }
 `
 
