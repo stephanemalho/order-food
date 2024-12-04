@@ -2,7 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import { theme } from "../../theme"
 
-export default function Sticker({ label = "new", className }) {
+type StickerProps = {
+  label : "new" | "nouveau"
+  className : string
+}
+
+export default function Sticker({ label = "new", className }: StickerProps) {
   return <StickerStyled className={className}>{label}</StickerStyled>
 }
 

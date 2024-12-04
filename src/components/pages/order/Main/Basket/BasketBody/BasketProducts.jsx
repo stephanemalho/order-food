@@ -10,7 +10,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group"
 import { basketAnimation } from "../../../../../../theme/animations"
 import { formatPrice } from "../../../../../../utils/maths"
 import { convertStringToBoolean } from "../../../../../../utils/string"
-import Sticker from "../../../../../reusable-ui/Sticker"
+//import Sticker from "../../../../../reusable-ui/Sticker"
 
 export default function BasketProducts() {
   const { username, basket, isModeAdmin, handleDeleteBasketProduct, menu, handleProductSelected, productSelected } =
