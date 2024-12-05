@@ -14,7 +14,6 @@
         "resolveJsonModule": true, // Permet l'importation de fichiers JSON dans TypeScript
         "jsx": "react-jsx", // Utilise le support JSX avec React (React 17+ n'a plus besoin d'import explicite de React)
         "noEmit": true, // Empêche la sortie des fichiers de compilation (utile pour des outils comme Babel)
-        "incremental": true // Active les builds incrémentaux pour accélérer les recompilations
     },
     "include": ["src/**/*"], // Inclut tous les fichiers dans le dossier "src" pour la compilation
     "exclude": ["node_modules", "build", "dist"] // Exclut les dossiers node_modules, build et dist de la compilation
