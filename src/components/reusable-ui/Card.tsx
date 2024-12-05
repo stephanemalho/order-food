@@ -3,6 +3,19 @@ import { theme } from "../../theme"
 import Button from "./button/Button"
 import { TiDelete } from "react-icons/ti"
 import { fadeInFromRight, fadeInFromTop } from "../../theme/animations"
+import { ButtonLabelEnum } from "./button/button.type"
+
+type CardProps = {
+  title: string
+  imageSource: string
+  leftDescription: string
+  hasDeleteButton: boolean
+  onDelete: React.MouseEventHandler<HTMLButtonElement>
+  onClick: React.MouseEventHandler<HTMLDivElement>
+  onAdd: () => void
+  overlapImageSource: string
+  isOverlapImageVisible: boolean
+} & CardStyledType
 
 export default function Card({
   title,
@@ -15,8 +28,8 @@ export default function Card({
   isSelected,
   onAdd,
   overlapImageSource,
-  isOverlapImageVisible,
-}) {
+  isOverlapImageVisible
+}: CardProps) {
   // state (vide)
 
   // comportements (vide)
@@ -31,7 +44,11 @@ export default function Card({
     >
       <div className="card">
         {hasDeleteButton && (
-          <button className="delete-button" aria-label="delete-button" onClick={onDelete}>
+          <button
+            className="delete-button"
+            aria-label="delete-button"
+            onClick={onDelete}
+          >
             <TiDelete className="icon" />
           </button>
         )}
@@ -40,7 +57,11 @@ export default function Card({
           {isOverlapImageVisible && (
             <div className="overlap">
               <div className="transparent-layer"></div>
-              <img className="overlap-image" src={overlapImageSource} alt="overlap" />
+              <img
+                className="overlap-image"
+                src={overlapImageSource}
+                alt="overlap"
+              />
             </div>
           )}
           <img className="product" src={imageSource} alt={title} />
@@ -53,7 +74,7 @@ export default function Card({
             <div className="right-description">
               <Button
                 className="primary-button"
-                label={"Ajouter"}
+                label={ButtonLabelEnum.ADD}
                 onClick={onAdd}
                 disabled={isOverlapImageVisible}
               />
@@ -65,7 +86,12 @@ export default function Card({
   )
 }
 
-const CardStyled = styled.div`
+type CardStyledType = {
+  isHoverable : boolean
+  isSelected: boolean
+}
+
+const CardStyled = styled.div<CardStyledType>`
   ${({ isHoverable }) => isHoverable && hoverableStyle}
   border-radius: ${theme.borderRadius.extraRound};
   /* border: 1px solid red; */
