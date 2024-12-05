@@ -1,7 +1,16 @@
 import styled from "styled-components"
-import { theme } from "../../theme"
+import { theme } from "../../../theme"
+import { RibbonLabelEnum } from "./ribbon.type"
 
-export default function Ribbon({ label = "new", className }) {
+type RibbonProps = {
+  label: RibbonLabelEnum
+  className: string
+}
+
+export default function Ribbon({
+  label = RibbonLabelEnum.NEW,
+  className
+}: RibbonProps) {
   return (
     <RibbonStyled className={className}>
       <div className="ribbon ribbon-top-left">

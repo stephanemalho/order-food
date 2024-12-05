@@ -1,11 +1,17 @@
 import { CSSTransition } from "react-transition-group"
-import Ribbon from "../../../../../reusable-ui/Ribbon"
+import Ribbon from "../../../../../reusable-ui/ribbon/Ribbon"
 import { css } from "styled-components"
+import { RibbonLabelEnum } from "../../../../../reusable-ui/ribbon/ribbon.type"
 
 export default function RibbonAnimated() {
   return (
-    <CSSTransition in={true} timeout={500} appear={true} classNames="ribbon-animation">
-      <Ribbon className="ribbon" label="nouveau" />
+    <CSSTransition
+      in={true}
+      timeout={500}
+      appear={true}
+      classNames="ribbon-animation"
+    >
+      <Ribbon className="ribbon" label={RibbonLabelEnum.NOUVEAU} />
     </CSSTransition>
   )
 }

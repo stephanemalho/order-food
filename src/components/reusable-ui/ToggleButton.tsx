@@ -2,12 +2,22 @@ import React from "react"
 import styled from "styled-components"
 import { theme } from "../../theme"
 
+type labelCheckedType = "Fermer" | "DÉSACTIVER LE MODE ADMIN"
+type labelUncheckedType = "Ouvrir" | "ACTIVER LE MODE ADMIN"
+
+type ToggleButtonProps = {
+  isChecked?: boolean
+  onToggle: () => void
+  labelIfChecked: labelCheckedType
+  labelIfUnchecked: labelUncheckedType
+}
+
 export default function ToggleButton({
   isChecked,
   onToggle,
   labelIfChecked = "Fermer",
-  labelIfUnchecked = "Ouvrir",
-}) {
+  labelIfUnchecked = "Ouvrir"
+}: ToggleButtonProps) {
   return (
     <ToggleButtonStyled>
       <input

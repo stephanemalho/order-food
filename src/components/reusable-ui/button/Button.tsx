@@ -1,16 +1,43 @@
+import { ReactNode } from "react"
 import styled, { css } from "styled-components"
-import { theme } from "../../theme"
+import { theme } from "../../../theme"
+import {
+  ButtonLabelEnum,
+  ButtonStyledProps,
+  ButtonVersion
+} from "./button.type"
 
-export default function Button({ label, Icon, className, version = "normal", onClick, disabled }) {
+type ButtonProps = {
+  label: ButtonLabelEnum
+  Icon?: ReactNode
+  className?: string | undefined
+  version?: ButtonVersion | undefined
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined
+  disabled?: boolean | undefined
+}
+
+export default function Button({
+  label,
+  Icon,
+  className,
+  version = "normal",
+  onClick,
+  disabled
+}: ButtonProps) {
   return (
-    <ButtonStyled className={className} version={version} onClick={onClick} disabled={disabled}>
+    <ButtonStyled
+      className={className}
+      version={version}
+      onClick={onClick}
+      disabled={disabled}
+    >
       <span>{label}</span>
       <div className="icon">{Icon && Icon}</div>
     </ButtonStyled>
   )
 }
 
-const ButtonStyled = styled.button`
+const ButtonStyled = styled.button<ButtonStyledProps>`
   ${({ version }) => extraStyle[version]};
 `
 
@@ -95,5 +122,5 @@ const extraStyleSuccess = css`
 `
 const extraStyle = {
   normal: extraStyleNormal,
-  success: extraStyleSuccess,
+  success: extraStyleSuccess
 }

@@ -1,8 +1,22 @@
-import React from "react"
+import React, { ReactNode } from "react"
 import styled from "styled-components"
 import { theme } from "../../theme"
 
-export default function Tab({ label, Icon, onClick, className }) {
+export enum TabLabelEnum { 
+  ADD_PPRODUCT = "Ajouter un produit",
+  EDIT_PRODUCT = "Modifier un produit",
+  EMPTY = ""
+}
+
+type TabProps = {
+  index : string
+  label : TabLabelEnum
+  Icon : ReactNode
+  onClick : () => void
+  className : string
+} 
+
+export default function Tab({ label, Icon, onClick, className }: TabProps) {
   return (
     <TabStyled onClick={onClick} className={className}>
       <div className="icon">{Icon}</div>

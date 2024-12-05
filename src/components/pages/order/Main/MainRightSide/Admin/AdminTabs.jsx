@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import Tab from "../../../../../reusable-ui/Tab"
+import Tab, { TabLabelEnum } from "../../../../../reusable-ui/Tab"
 import { FiChevronDown, FiChevronUp } from "react-icons/fi"
 import { theme } from "../../../../../../theme"
 import { useContext } from "react"
@@ -24,7 +24,7 @@ export default function AdminTabs() {
     <AdminTabsStyled>
       <Tab
         index="chevron"
-        label=""
+        label={TabLabelEnum.EMPTY}
         Icon={isCollapsed ? <FiChevronUp /> : <FiChevronDown />}
         onClick={() => setIsCollapsed(!isCollapsed)}
         className={isCollapsed ? "is-active" : ""}
